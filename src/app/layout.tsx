@@ -9,20 +9,20 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'StudioDesign — Studio Desain Visual',
-  description: 'Mengubah ide brand Anda menjadi karya visual kelas dunia. Layanan branding, desain UI/UX, dan strategi media sosial bereputasi tinggi.',
-  keywords: ['studio desain', 'ui ux design indonesia', 'branding agency', 'desain feed instagram', 'jasa desain web nextjs'],
+  title: 'BS DICREAT - Jasa Desain Grafis',
+  description: 'BS DICREAT adalah jasa desain grafis profesional untuk visual branding, media sosial, dan konten promosi. Solusi kreatif dan elegan untuk membuat bisnis Anda tampil beda dan tepercaya.',
+  keywords: ['bs dicreat', 'jasa desain', 'jasa desain grafis', 'jasa desain grafis cilegon', 'jasa desain digital'],
   openGraph: {
-    title: 'StudioDesign — Studio Desain Visual',
-    description: 'Mengubah ide brand Anda menjadi karya visual kelas dunia.',
-    url: 'https://studiodesign.id',
-    siteName: 'StudioDesign',
+    title: 'BS DICREAT - Jasa Desain Grafis Kreatif & Berkualitas',
+    description: 'BS DICREAT adalah jasa desain grafis profesional untuk visual branding, media sosial, dan konten promosi. Solusi kreatif dan elegan untuk membuat bisnis Anda tampil beda dan tepercaya.',
+    url: 'https://bsdicreat.vercel.app',
+    siteName: 'BS DICREAT',
     images: [
       {
         url: '/images/hero_showcase.jpg',
         width: 1200,
         height: 675,
-        alt: 'StudioDesign Portfolio Showcase',
+        alt: 'BS DICREAT Portfolio Showcase',
       },
     ],
     locale: 'id_ID',
