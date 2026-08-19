@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: 'BS DICREAT adalah jasa desain grafis profesional untuk visual branding, media sosial, dan media promosi. Solusi kreatif dan elegan untuk membuat bisnis Anda tampil beda dan tepercaya.',
   keywords: ['bs dicreat', 'bsdicreat', 'jasa desain', 'jasa desain grafis', 'jasa desain grafis cilegon', 'jasa desain grafis banten', 'pembuatan banner promosi'],
   verification: {
-    google: '<meta name="google-site-verification" content="FbN0TtOeDHStgoQlAQDGyzxQL58c5He1Icz1U-I7-LU" />',
+    google: 'FbN0TtOeDHStgoQlAQDGyzxQL58c5He1Icz1U-I7-LU',
   },
   openGraph: {
     title: 'BS DICREAT - Jasa Desain Grafis Kreatif & Berkualitas',
