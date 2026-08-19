@@ -57,16 +57,16 @@ export default function Services() {
         </ScrollReveal>
 
         {/* Services Cards Grid */}
-        <ScrollStagger staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        <ScrollStagger staggerChildren={0.08} className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
           {services.map((service) => {
             const IconComponent = service.icon;
             return (
               <ScrollStaggerItem key={service.id} direction="up" distance={35} className="h-full">
-                <div className="relative h-full rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 glass-card hover:border-cyan-400 group hover:-translate-y-2">
+                <div className="relative h-full rounded-3xl p-8 flex flex-col justify-between transition-all duration-200 glass-card hover:border-cyan-400 group hover:-translate-y-1">
                   <div>
                     {/* Top Icon & Badge */}
                     <div className="flex items-center justify-between mb-6">
-                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${service.iconColor} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${service.iconColor} flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-200`}>
                         <IconComponent className="w-7 h-7 text-white" />
                       </div>
                       <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${service.badgeColor}`}>

@@ -65,19 +65,19 @@ export default function Workflow() {
         </ScrollReveal>
 
         {/* Workflow Timeline Grid */}
-        <ScrollStagger staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <ScrollStagger staggerChildren={0.08} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {steps.map((step) => {
             const IconComponent = step.icon;
             return (
               <ScrollStaggerItem key={step.number} direction="up" distance={35} className="h-full">
-                <div className="relative h-full rounded-3xl p-6 glass-card hover:border-cyan-400 flex flex-col justify-between group hover:-translate-y-2 transition-transform duration-300">
+                <div className="relative h-full rounded-3xl p-6 glass-card hover:border-cyan-400 flex flex-col justify-between group hover:-translate-y-1 transition-transform duration-200">
                   <div>
                     {/* Step Top Header */}
                     <div className="flex items-center justify-between mb-6">
                       <span className="text-4xl font-black text-slate-200 group-hover:text-cyan-400 transition-colors font-mono">
                         {step.number}
                       </span>
-                      <div className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${step.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                      <div className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${step.color} flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-200`}>
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
                     </div>

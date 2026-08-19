@@ -20,11 +20,11 @@ export default function ScrollReveal({
   children,
   direction = 'up',
   delay = 0,
-  duration = 0.6,
-  distance = 35,
+  duration = 0.45,
+  distance = 20,
   className = '',
   once = true,
-  amount = 0.2,
+  amount = 0.15,
 }: ScrollRevealProps) {
   const getVariants = () => {
     switch (direction) {
@@ -71,8 +71,9 @@ export default function ScrollReveal({
       transition={{
         duration,
         delay,
-        ease: [0.22, 1, 0.36, 1], // Ultra smooth natural cubic bezier
+        ease: [0.25, 0.46, 0.45, 0.94], // smooth easeOut — lighter on mobile
       }}
+      style={{ willChange: 'transform, opacity' }}
       className={className}
     >
       {children}
@@ -84,10 +85,10 @@ export default function ScrollReveal({
 export function ScrollStagger({
   children,
   className = '',
-  staggerChildren = 0.12,
+  staggerChildren = 0.08,
   delayChildren = 0,
   once = true,
-  amount = 0.2,
+  amount = 0.1,
 }: {
   children: React.ReactNode;
   className?: string;
@@ -121,9 +122,9 @@ export function ScrollStagger({
 export function ScrollStaggerItem({
   children,
   direction = 'up',
-  distance = 30,
+  distance = 18,
   className = '',
-  duration = 0.5,
+  duration = 0.4,
 }: {
   children: React.ReactNode;
   direction?: Direction;
@@ -172,8 +173,9 @@ export function ScrollStaggerItem({
       variants={getVariants()}
       transition={{
         duration,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.25, 0.46, 0.45, 0.94],
       }}
+      style={{ willChange: 'transform, opacity' }}
       className={className}
     >
       {children}

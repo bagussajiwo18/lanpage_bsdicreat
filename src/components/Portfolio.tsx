@@ -139,11 +139,11 @@ export default function Portfolio() {
                 <motion.div
                   key={item.id}
                   layout
-                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                  animate={{ opacity: 1, scale: 1, y: 0 }}
-                  exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                  transition={{ duration: 0.4, delay: (index % 3) * 0.1 }}
-                  className="group relative rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-md hover:shadow-2xl hover:border-cyan-400 transition-all duration-300 hover:-translate-y-2"
+                  initial={{ opacity: 0, y: 12 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: 12 }}
+                  transition={{ duration: 0.25, delay: (index % 3) * 0.05 }}
+                  className="group relative rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-md hover:shadow-xl hover:border-cyan-400 transition-all duration-200 hover:-translate-y-1"
                 >
                   {/* Card Image Container */}
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">
@@ -152,7 +152,7 @@ export default function Portfolio() {
                       alt={item.title}
                       fill
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                      className="object-cover transform group-hover:scale-108 transition-transform duration-700 ease-out"
+                      className="object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
                     />
 
                     {/* Top Badge */}
