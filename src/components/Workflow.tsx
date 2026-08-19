@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Search, Compass, Repeat, Rocket, Sparkles, CheckCircle } from 'lucide-react';
+import ScrollReveal, { ScrollStagger, ScrollStaggerItem } from './ScrollReveal';
+import { Search, Compass, Repeat, Rocket, CheckCircle } from 'lucide-react';
 
 export default function Workflow() {
   const steps = [
@@ -51,8 +51,8 @@ export default function Workflow() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4">
+        <ScrollReveal direction="up" distance={30} className="text-center max-w-3xl mx-auto mb-20">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             <span>Alur Kerja Kami</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
@@ -62,64 +62,59 @@ export default function Workflow() {
           <p className="mt-4 text-base sm:text-lg text-slate-500">
             Proses kolaborasi transparan untuk hasil yang maksimal.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Workflow Timeline Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((step, index) => {
+        <ScrollStagger staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {steps.map((step) => {
             const IconComponent = step.icon;
             return (
-              <motion.div
-                key={step.number}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="relative rounded-3xl p-6 glass-card hover:border-cyan-400 flex flex-col justify-between group"
-              >
-                <div>
-                  {/* Step Top Header */}
-                  <div className="flex items-center justify-between mb-6">
-                    <span className="text-4xl font-black text-slate-200 group-hover:text-cyan-300 transition-colors font-mono">
-                      {step.number}
-                    </span>
-                    <div className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${step.color} flex items-center justify-center shadow-lg`}>
-                      <IconComponent className="w-6 h-6 text-white" />
+              <ScrollStaggerItem key={step.number} direction="up" distance={35} className="h-full">
+                <div className="relative h-full rounded-3xl p-6 glass-card hover:border-cyan-400 flex flex-col justify-between group hover:-translate-y-2 transition-transform duration-300">
+                  <div>
+                    {/* Step Top Header */}
+                    <div className="flex items-center justify-between mb-6">
+                      <span className="text-4xl font-black text-slate-200 group-hover:text-cyan-400 transition-colors font-mono">
+                        {step.number}
+                      </span>
+                      <div className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${step.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                        <IconComponent className="w-6 h-6 text-white" />
+                      </div>
                     </div>
+
+                    {/* Title & Subtitle */}
+                    <div className="mb-4">
+                      <span className="text-xs font-bold uppercase tracking-wider text-[#00658D]">
+                        {step.subtitle}
+                      </span>
+                      <h3 className="text-xl font-bold text-slate-900 mt-1">{step.title}</h3>
+                    </div>
+
+                    {/* Description */}
+                    <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
+                      {step.description}
+                    </p>
                   </div>
 
-                  {/* Title & Subtitle */}
-                  <div className="mb-4">
-                    <span className="text-xs font-bold uppercase tracking-wider text-[#00658D]">
-                      {step.subtitle}
-                    </span>
-                    <h3 className="text-xl font-bold text-slate-900 mt-1">{step.title}</h3>
+                  {/* Deliverables List */}
+                  <div className="pt-4 border-t border-slate-200">
+                    <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">
+                      Hasil Deliverables:
+                    </div>
+                    <ul className="space-y-1.5">
+                      {step.deliverables.map((item, dIdx) => (
+                        <li key={dIdx} className="flex items-center gap-2 text-xs text-slate-600">
+                          <CheckCircle className="w-3.5 h-3.5 text-[#00658D] shrink-0" />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-
-                  {/* Description */}
-                  <p className="text-slate-600 text-xs sm:text-sm leading-relaxed mb-6">
-                    {step.description}
-                  </p>
                 </div>
-
-                {/* Deliverables List */}
-                <div className="pt-4 border-t border-slate-200">
-                  <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-2">
-                    Hasil Deliverables:
-                  </div>
-                  <ul className="space-y-1.5">
-                    {step.deliverables.map((item, dIdx) => (
-                      <li key={dIdx} className="flex items-center gap-2 text-xs text-slate-600">
-                        <CheckCircle className="w-3.5 h-3.5 text-[#00658D] shrink-0" />
-                        <span>{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </motion.div>
+              </ScrollStaggerItem>
             );
           })}
-        </div>
+        </ScrollStagger>
       </div>
     </section>
   );

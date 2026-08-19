@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import ScrollReveal, { ScrollStagger, ScrollStaggerItem } from './ScrollReveal';
 import { ChevronDown, HelpCircle } from 'lucide-react';
 
 export default function FAQ() {
@@ -35,12 +36,12 @@ export default function FAQ() {
   };
 
   return (
-    <section id="faq" className="py-24 bg-slate-50 relative">
+    <section id="faq" className="py-24 bg-slate-50 relative overflow-hidden">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4">
+        <ScrollReveal direction="up" distance={30} className="text-center mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Pertanyaan Umum</span>
           </div>
@@ -50,47 +51,48 @@ export default function FAQ() {
           <p className="mt-4 text-base sm:text-lg text-slate-500">
             Temukan jawaban cepat mengenai proses kerja, pembayaran, dan serah terima file.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Accordion List */}
-        <div className="space-y-4">
+        <ScrollStagger staggerChildren={0.1} className="space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
-              <div
-                key={index}
-                className="rounded-2xl bg-white border border-slate-200 overflow-hidden transition-all shadow-sm hover:shadow-md"
-              >
-                <button
-                  onClick={() => toggleFAQ(index)}
-                  className="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
+              <ScrollStaggerItem key={index} direction="up" distance={25}>
+                <div
+                  className="rounded-2xl bg-white border border-slate-200 overflow-hidden transition-all shadow-sm hover:shadow-md hover:border-cyan-300"
                 >
-                  <span className="text-base sm:text-lg font-bold text-slate-900">
-                    {faq.q}
-                  </span>
-                  <div className={`p-2 rounded-full transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#00658D] bg-cyan-50' : 'text-slate-400 bg-slate-100'}`}>
-                    <ChevronDown className="w-5 h-5" />
-                  </div>
-                </button>
+                  <button
+                    onClick={() => toggleFAQ(index)}
+                    className="w-full p-6 text-left flex items-center justify-between gap-4 focus:outline-none"
+                  >
+                    <span className="text-base sm:text-lg font-bold text-slate-900">
+                      {faq.q}
+                    </span>
+                    <div className={`p-2 rounded-full transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#00658D] bg-cyan-50' : 'text-slate-400 bg-slate-100'}`}>
+                      <ChevronDown className="w-5 h-5" />
+                    </div>
+                  </button>
 
-                <AnimatePresence>
-                  {isOpen && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <div className="px-6 pb-6 pt-0 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 mt-2">
-                        {faq.a}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
+                  <AnimatePresence>
+                    {isOpen && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3 }}
+                      >
+                        <div className="px-6 pb-6 pt-0 text-sm sm:text-base text-slate-600 leading-relaxed border-t border-slate-100 mt-2">
+                          {faq.a}
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </ScrollStaggerItem>
             );
           })}
-        </div>
+        </ScrollStagger>
       </div>
     </section>
   );

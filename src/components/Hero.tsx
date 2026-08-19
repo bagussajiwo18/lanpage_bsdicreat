@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { ShieldCheck } from 'lucide-react';
+import ScrollReveal, { ScrollStagger, ScrollStaggerItem } from './ScrollReveal';
 import { getWhatsAppLink } from '@/lib/whatsapp';
 
 export default function Hero() {
@@ -21,71 +21,98 @@ export default function Hero() {
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-radial-glow">
       {/* Background Decorative Lighting */}
-      <div className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/8 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-purple-600/6 rounded-full blur-[120px] pointer-events-none" />
+      <motion.div
+        animate={{
+          scale: [1, 1.1, 1],
+          opacity: [0.08, 0.12, 0.08],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          ease: 'easeInOut',
+        }}
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-cyan-500/10 rounded-full blur-[140px] pointer-events-none"
+      />
+      <motion.div
+        animate={{
+          scale: [1, 1.15, 1],
+          opacity: [0.06, 0.1, 0.06],
+        }}
+        transition={{
+          duration: 10,
+          repeat: Infinity,
+          ease: 'easeInOut',
+          delay: 1,
+        }}
+        className="absolute top-1/3 right-10 w-[400px] h-[400px] bg-purple-600/8 rounded-full blur-[120px] pointer-events-none"
+      />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="flex flex-col items-center justify-center max-w-4xl mx-auto">
+          <ScrollStagger staggerChildren={0.15} className="w-full flex flex-col gap-6 text-center items-center justify-center">
 
-          {/* Text Column */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="w-full flex flex-col gap-6 text-center items-center justify-center"
-          >
             {/* Top Pill Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#00658D] text-xs font-semibold self-center">
-              <span>BS Dgital Creative</span>
-            </div>
+            <ScrollStaggerItem direction="down" distance={20}>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#00658D] text-xs font-semibold self-center shadow-sm">
+                <span>BS Digital Creative</span>
+              </div>
+            </ScrollStaggerItem>
 
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-900">
-              Visualize <span className="text-gradient-cyan">Your Ideas</span>
-            </h1>
+            <ScrollStaggerItem direction="up" distance={30}>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-slate-900">
+                Visualize <span className="text-gradient-cyan">Your Ideas</span>
+              </h1>
+            </ScrollStaggerItem>
 
             {/* Subheading */}
-            <p className="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl">
-              Dari sebuah ide menjadi visual yang punya karakter, dan tujuan. Temukan solusi desain kreatif untuk kebutuhanmu bersama BS DICREAT.
-            </p>
+            <ScrollStaggerItem direction="up" distance={25}>
+              <p className="text-lg sm:text-xl text-slate-600 font-normal leading-relaxed max-w-2xl">
+                Dari sebuah ide menjadi visual yang punya karakter, dan tujuan. Temukan solusi desain kreatif untuk kebutuhanmu bersama BS DICREAT.
+              </p>
+            </ScrollStaggerItem>
 
             {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row items-center gap-4 pt-2 justify-center">
-              <a
-                href={waLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-[#00658D] via-[#35A7E0] to-[#712AE2] text-white font-bold text-base hover:shadow-xl hover:shadow-cyan-500/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 group"
-              >
-                <WhatsAppIcon className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
-                <span>Konsultasi Gratis via WhatsApp</span>
-              </a>
+            <ScrollStaggerItem direction="scale" distance={20}>
+              <div className="flex flex-col sm:flex-row items-center gap-4 pt-2 justify-center">
+                <a
+                  href={waLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-[#00658D] via-[#35A7E0] to-[#712AE2] text-white font-bold text-base hover:shadow-xl hover:shadow-cyan-500/30 transition-all transform hover:-translate-y-1 flex items-center justify-center gap-3 group"
+                >
+                  <WhatsAppIcon className="w-6 h-6 text-white group-hover:scale-110 transition-transform" />
+                  <span>Konsultasi via WhatsApp</span>
+                </a>
 
-              <a
-                href="#portofolio"
-                className="w-full sm:w-auto px-7 py-4 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 font-semibold text-base transition-all flex items-center justify-center gap-2 hover:border-cyan-400"
-              >
-                <span>Lihat Portofolio</span>
-              </a>
-            </div>
+                <a
+                  href="#portofolio"
+                  className="w-full sm:w-auto px-7 py-4 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-200 text-slate-700 font-semibold text-base transition-all flex items-center justify-center gap-2 hover:border-cyan-400"
+                >
+                  <span>Lihat Portofolio</span>
+                </a>
+              </div>
+            </ScrollStaggerItem>
 
             {/* Trust Badges Bar */}
-            <div className="pt-6 border-t border-slate-200 grid grid-cols-3 gap-4 text-center w-full max-w-3xl">
-              <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-slate-900">100+</div>
-                <div className="text-xs sm:text-sm text-slate-500 font-medium">Proyek Selesai</div>
+            <ScrollStaggerItem direction="up" distance={20}>
+              <div className="pt-6 mt-4 border-t border-slate-200 grid grid-cols-3 gap-4 text-center w-full max-w-3xl">
+                <div className="p-3 rounded-2xl hover:bg-slate-50 transition-colors">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-slate-900">100+</div>
+                  <div className="text-xs sm:text-sm text-slate-500 font-medium">Proyek Selesai</div>
+                </div>
+                <div className="p-3 rounded-2xl hover:bg-slate-50 transition-colors">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-gradient-cyan">90%</div>
+                  <div className="text-xs sm:text-sm text-slate-500 font-medium">Klien Puas</div>
+                </div>
+                <div className="p-3 rounded-2xl hover:bg-slate-50 transition-colors">
+                  <div className="text-2xl sm:text-3xl font-extrabold text-slate-900">5x</div>
+                  <div className="text-xs sm:text-sm text-slate-500 font-medium">Rata-rata Kenaikan Conversion</div>
+                </div>
               </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-gradient-cyan">90%</div>
-                <div className="text-xs sm:text-sm text-slate-500 font-medium">Klien Puas</div>
-              </div>
-              <div>
-                <div className="text-2xl sm:text-3xl font-extrabold text-slate-900">5x</div>
-                <div className="text-xs sm:text-sm text-slate-500 font-medium">Rata-rata Kenaikan Conversion</div>
-              </div>
-            </div>
-          </motion.div>
+            </ScrollStaggerItem>
 
+          </ScrollStagger>
         </div>
       </div>
     </section>

@@ -1,7 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { Palette, Layout, Megaphone, Sparkles } from 'lucide-react';
+import ScrollReveal, { ScrollStagger, ScrollStaggerItem } from './ScrollReveal';
+import { Palette, Layout, Megaphone } from 'lucide-react';
 
 export default function Services() {
   const services = [
@@ -43,8 +43,8 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4">
+        <ScrollReveal direction="up" distance={30} className="text-center max-w-3xl mx-auto mb-16">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             <span>Layanan Kami</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
@@ -54,43 +54,37 @@ export default function Services() {
           <p className="mt-4 text-base sm:text-lg text-slate-500">
             Pilih layanan yang sesuai dengan tahapan bisnis Anda.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Services Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
-          {services.map((service, index) => {
+        <ScrollStagger staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+          {services.map((service) => {
             const IconComponent = service.icon;
             return (
-              <motion.div
-                key={service.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
-                className="relative rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 glass-card hover:border-cyan-400"
-              >
-
-                <div>
-                  {/* Top Icon & Badge */}
-                  <div className="flex items-center justify-between mb-6">
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${service.iconColor} flex items-center justify-center shadow-lg`}>
-                      <IconComponent className="w-7 h-7 text-white" />
+              <ScrollStaggerItem key={service.id} direction="up" distance={35} className="h-full">
+                <div className="relative h-full rounded-3xl p-8 flex flex-col justify-between transition-all duration-300 glass-card hover:border-cyan-400 group hover:-translate-y-2">
+                  <div>
+                    {/* Top Icon & Badge */}
+                    <div className="flex items-center justify-between mb-6">
+                      <div className={`w-14 h-14 rounded-2xl bg-gradient-to-tr ${service.iconColor} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                        <IconComponent className="w-7 h-7 text-white" />
+                      </div>
+                      <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${service.badgeColor}`}>
+                        {service.badge}
+                      </span>
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-xs font-semibold border ${service.badgeColor}`}>
-                      {service.badge}
-                    </span>
-                  </div>
 
-                  {/* Title & Description */}
-                  <h3 className="text-2xl font-bold mb-3 text-slate-900">{service.title}</h3>
-                  <p className="text-sm leading-relaxed text-slate-600">
-                    {service.description}
-                  </p>
+                    {/* Title & Description */}
+                    <h3 className="text-2xl font-bold mb-3 text-slate-900 group-hover:text-[#00658D] transition-colors">{service.title}</h3>
+                    <p className="text-sm leading-relaxed text-slate-600">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
-              </motion.div>
+              </ScrollStaggerItem>
             );
           })}
-        </div>
+        </ScrollStagger>
       </div>
     </section>
   );
