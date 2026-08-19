@@ -9,20 +9,20 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'BS DICREAT - Jasa Desain Grafis',
-  description: 'BS DICREAT adalah jasa desain grafis profesional untuk visual branding, media sosial, dan konten promosi. Solusi kreatif dan elegan untuk membuat bisnis Anda tampil beda dan tepercaya.',
+  title: 'BS DICREAT - Jasa Desain Grafis Kreatif',
+  description: 'BS DICREAT adalah jasa desain grafis profesional untuk visual branding, media sosial, dan media promosi. Solusi kreatif dan elegan untuk membuat bisnis Anda tampil beda dan tepercaya.',
   keywords: ['bs dicreat', 'jasa desain', 'jasa desain grafis', 'jasa desain grafis cilegon', 'jasa desain digital'],
   openGraph: {
     title: 'BS DICREAT - Jasa Desain Grafis Kreatif & Berkualitas',
-    description: 'BS DICREAT adalah jasa desain grafis profesional untuk visual branding, media sosial, dan konten promosi. Solusi kreatif dan elegan untuk membuat bisnis Anda tampil beda dan tepercaya.',
+    description: 'BS DICREAT adalah jasa desain grafis profesional untuk visual branding, media sosial, dan media promosi. Solusi kreatif dan elegan untuk membuat bisnis Anda tampil beda dan tepercaya.',
     url: 'https://bsdicreat.vercel.app',
     siteName: 'BS DICREAT',
     images: [
       {
-        url: '/images/hero_showcase.jpg',
+        url: '/images/letter_bsdicreat.png',
         width: 1200,
         height: 675,
-        alt: 'BS DICREAT Portfolio Showcase',
+        alt: 'BS DICREAT Lettermark',
       },
     ],
     locale: 'id_ID',
