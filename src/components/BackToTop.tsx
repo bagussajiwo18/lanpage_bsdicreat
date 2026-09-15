@@ -50,7 +50,7 @@ export default function BackToTop() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
           aria-label="Kembali ke atas"
-          className="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-slate-950 text-white border border-slate-800 shadow-xl flex items-center justify-center group focus:outline-none focus:ring-2 focus:ring-[#35A7E0]"
+          className="fixed bottom-6 right-6 z-40 w-12 h-12 rounded-full bg-slate-950 text-white border border-slate-800 shadow-xl flex items-center justify-center group focus:outline-none focus:ring-2 focus:ring-[#0284C7]"
         >
           {/* Circular Progress Ring */}
           <svg className="absolute w-12 h-12 -rotate-90 pointer-events-none" viewBox="0 0 48 48">
@@ -67,7 +67,7 @@ export default function BackToTop() {
               cx="24"
               cy="24"
               r={radius}
-              className="text-[#35A7E0]"
+              className="text-[#F59E0B]"
               strokeWidth="2.5"
               strokeDasharray={circumference}
               strokeDashoffset={strokeDashoffset}

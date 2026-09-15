@@ -7,14 +7,14 @@
     --bg-card: rgba(255, 255, 255, 0.85);
     --bg-card-hover: rgba(248, 250, 252, 0.95);
     --primary: #00658D;
-    --primary-cyan: #35A7E0;
-    --secondary-violet: #712AE2;
-    --accent-gold: #F59E0B;
+    --primary-sky: #0284C7;
+    --accent-yellow: #EAB308;
+    --accent-amber: #F59E0B;
     --text-primary: #0F172A;
     --text-secondary: #475569;
     --text-muted: #94A3B8;
     --border-light: rgba(15, 23, 42, 0.08);
-    --border-light-hover: rgba(53, 167, 224, 0.4);
+    --border-light-hover: rgba(2, 132, 199, 0.4);
   }
 
   html {
@@ -55,13 +55,14 @@
 }
 
 .glass-card:hover {
-  border-color: rgba(53, 167, 224, 0.5);
-  box-shadow: 0 8px 30px -8px rgba(53, 167, 224, 0.15);
+  border-color: rgba(2, 132, 199, 0.5);
+  box-shadow: 0 8px 30px -8px rgba(245, 158, 11, 0.15);
   transform: translateY(-2px);
 }
 
-.text-gradient-cyan {
-  background: linear-gradient(135deg, #00658D 0%, #712AE2 100%);
+.text-gradient-cyan,
+.text-gradient-blue-yellow {
+  background: linear-gradient(135deg, #00658D 0%, #0284C7 35%, #F59E0B 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -69,7 +70,7 @@
 }
 
 .text-gradient-gold {
-  background: linear-gradient(135deg, #F59E0B 0%, #EF4444 100%);
+  background: linear-gradient(135deg, #F59E0B 0%, #EAB308 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -77,11 +78,12 @@
 }
 
 .bg-radial-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(53, 167, 224, 0.08) 0%, rgba(113, 42, 226, 0.04) 50%, transparent 80%);
+  background: radial-gradient(circle at 50% 0%, rgba(2, 132, 199, 0.09) 0%, rgba(245, 158, 11, 0.06) 50%, transparent 80%);
 }
 
-.bg-radial-purple {
-  background: radial-gradient(circle at 100% 50%, rgba(113, 42, 226, 0.06) 0%, transparent 60%);
+.bg-radial-purple,
+.bg-radial-yellow {
+  background: radial-gradient(circle at 100% 50%, rgba(245, 158, 11, 0.07) 0%, transparent 60%);
 }
 
 /* Dynamic Mesh Background Animation */

@@ -105,7 +105,7 @@ export default function Portfolio() {
         {/* Section Header */}
         <ScrollReveal direction="up" distance={30} className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
           <div>
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
               <span>Portofolio</span>
             </div>
             <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
@@ -121,7 +121,7 @@ export default function Portfolio() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 className={`px-4 py-2 rounded-xl text-sm font-semibold transition-all duration-200 ${activeCategory === cat
-                  ? 'bg-gradient-to-r from-[#00658D] to-[#35A7E0] text-white shadow-lg shadow-cyan-500/20 scale-105'
+                  ? 'bg-gradient-to-r from-[#00658D] via-[#0284C7] to-[#F59E0B] text-white shadow-lg shadow-sky-500/20 scale-105'
                   : 'text-slate-500 hover:text-slate-900 hover:bg-white'
                   }`}
               >
@@ -143,7 +143,7 @@ export default function Portfolio() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 12 }}
                   transition={{ duration: 0.25, delay: (index % 3) * 0.05 }}
-                  className="group relative rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-md hover:shadow-xl hover:border-cyan-400 transition-all duration-200 hover:-translate-y-1"
+                  className="group relative rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-md hover:shadow-xl hover:border-sky-400 transition-all duration-200 hover:-translate-y-1"
                 >
                   {/* Card Image Container */}
                   <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-100">

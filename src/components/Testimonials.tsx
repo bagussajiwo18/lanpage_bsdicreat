@@ -31,13 +31,13 @@ export default function Testimonials() {
   return (
     <section id="ulasan" className="py-24 bg-white relative overflow-hidden">
       {/* Backdrop Ambient Lighting */}
-      <div className="absolute top-1/3 right-0 w-96 h-96 bg-purple-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/3 right-0 w-96 h-96 bg-amber-400/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
         <ScrollReveal direction="up" distance={30} className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             <span>Kepuasan Klien Prioritas Utama</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
@@ -53,7 +53,7 @@ export default function Testimonials() {
         <ScrollStagger staggerChildren={0.15} className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {reviews.map((rev) => (
             <ScrollStaggerItem key={rev.name} direction="up" distance={35} className="h-full">
-              <div className="relative h-full rounded-3xl p-8 bg-white border border-slate-200 shadow-md hover:shadow-2xl hover:border-cyan-400 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2">
+              <div className="relative h-full rounded-3xl p-8 bg-white border border-slate-200 shadow-md hover:shadow-2xl hover:border-sky-400 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-2">
                 <div>
                   {/* Top Rating & Quote Icon */}
                   <div className="flex items-center justify-between mb-6">
@@ -62,7 +62,7 @@ export default function Testimonials() {
                         <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                       ))}
                     </div>
-                    <Quote className="w-8 h-8 text-slate-200 group-hover:text-cyan-400 transition-colors duration-300" />
+                    <Quote className="w-8 h-8 text-slate-200 group-hover:text-amber-400 transition-colors duration-300" />
                   </div>
 
                   {/* Quote Text */}

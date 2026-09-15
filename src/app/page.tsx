@@ -11,7 +11,7 @@ import BackToTop from '@/components/BackToTop';
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white text-slate-900 selection:bg-[#35A7E0] selection:text-white relative overflow-x-hidden">
+    <main className="min-h-screen bg-white text-slate-900 selection:bg-[#0284C7] selection:text-white relative overflow-x-hidden">
       {/* Scroll Progress Indicator Bar at top */}
       <ScrollProgress />
 

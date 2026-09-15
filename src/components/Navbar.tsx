@@ -75,13 +75,13 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* CTA & Mobile Toggle */}
+            {/* CTA & Mobile Toggle */}
           <div className="flex items-center gap-3">
             <a
               href={waLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-gradient-to-r from-[#00658D] via-[#35A7E0] to-[#712AE2] text-white text-sm font-semibold hover:shadow-lg hover:shadow-cyan-500/25 transition-all transform hover:-translate-y-0.5"
+              className="hidden sm:inline-flex px-5 py-2.5 rounded-full bg-gradient-to-r from-[#00658D] via-[#0284C7] to-[#F59E0B] text-white text-sm font-semibold hover:shadow-lg hover:shadow-amber-500/25 transition-all transform hover:-translate-y-0.5"
             >
               <span>Konsultasi Gratis</span>
             </a>
@@ -125,7 +125,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 w-full flex items-center justify-center py-3.5 rounded-xl bg-gradient-to-r from-[#00658D] to-[#35A7E0] text-white font-bold text-base shadow-lg shadow-cyan-500/20"
+                className="mt-2 w-full flex items-center justify-center py-3.5 rounded-xl bg-gradient-to-r from-[#00658D] via-[#0284C7] to-[#F59E0B] text-white font-bold text-base shadow-lg shadow-amber-500/20"
               >
                 <span>Konsultasi via WhatsApp</span>
               </a>

@@ -9,18 +9,18 @@ export default function Services() {
       id: 'branding',
       title: 'Desain Digital & Media Sosial',
       badge: 'Digital',
-      badgeColor: 'border-cyan-300 text-[#00658D] bg-cyan-50',
+      badgeColor: 'border-sky-300 text-[#00658D] bg-sky-50',
       icon: Palette,
-      iconColor: 'from-[#00658D] to-[#35A7E0]',
+      iconColor: 'from-[#00658D] to-[#0284C7]',
       description: 'Tingkatkan kehadiran digital brand Anda dengan visual yang menarik, konsisten, dan responsif. Kami merancang materi promosi digital yang berfokus pada estetika sekaligus efektivitas konversi untuk menarik perhatian audiens target di berbagai platform.',
     },
     {
       id: 'uiux',
       title: 'Desain Grafis',
       badge: 'Graphic',
-      badgeColor: 'border-purple-300 text-purple-700 bg-purple-50',
+      badgeColor: 'border-blue-300 text-blue-700 bg-blue-50',
       icon: Layout,
-      iconColor: 'from-[#712AE2] to-indigo-500',
+      iconColor: 'from-[#0284C7] to-[#EAB308]',
       description: 'Solusi desain visual menyeluruh untuk mengomunikasikan pesan bisnis Anda secara jelas dan memikat. Kami merancang berbagai materi pemasaran digital maupun cetak dengan komposisi tata letak yang proporsional, fungsional, dan estetis demi memperkuat kesan profesional di mata target audiens.',
     },
     {
@@ -29,7 +29,7 @@ export default function Services() {
       badge: 'Branding',
       badgeColor: 'border-amber-300 text-amber-700 bg-amber-50',
       icon: Megaphone,
-      iconColor: 'from-amber-500 to-orange-600',
+      iconColor: 'from-[#EAB308] to-amber-500',
       description: 'Membangun identitas visual yang unik, profesional, dan berkesan untuk bisnis Anda dari nol maupun rebranding. Kami menciptakan sistem visual komprehensif yang tidak hanya terlihat estetis, tetapi juga memperkuat posisi brand Anda.',
     },
   ];
@@ -37,14 +37,14 @@ export default function Services() {
   return (
     <section id="layanan" className="py-24 bg-slate-50 relative overflow-hidden">
       {/* Glow Backdrops */}
-      <div className="absolute top-1/2 left-0 w-96 h-96 bg-purple-500/5 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-500/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute top-1/2 left-0 w-96 h-96 bg-amber-400/5 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-sky-500/5 rounded-full blur-[140px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Section Header */}
         <ScrollReveal direction="up" distance={30} className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             <span>Layanan Kami</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
@@ -62,7 +62,7 @@ export default function Services() {
             const IconComponent = service.icon;
             return (
               <ScrollStaggerItem key={service.id} direction="up" distance={35} className="h-full">
-                <div className="relative h-full rounded-3xl p-8 flex flex-col justify-between transition-all duration-200 glass-card hover:border-cyan-400 group hover:-translate-y-1">
+                <div className="relative h-full rounded-3xl p-8 flex flex-col justify-between transition-all duration-200 glass-card hover:border-sky-400 group hover:-translate-y-1">
                   <div>
                     {/* Top Icon & Badge */}
                     <div className="flex items-center justify-between mb-6">

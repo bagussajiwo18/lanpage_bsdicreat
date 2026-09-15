@@ -41,7 +41,7 @@ export default function FAQ() {
 
         {/* Section Header */}
         <ScrollReveal direction="up" distance={30} className="text-center mb-16">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             <HelpCircle className="w-3.5 h-3.5" />
             <span>Pertanyaan Umum</span>
           </div>
@@ -60,7 +60,7 @@ export default function FAQ() {
             return (
               <ScrollStaggerItem key={index} direction="up" distance={25}>
                 <div
-                  className="rounded-2xl bg-white border border-slate-200 overflow-hidden transition-all shadow-sm hover:shadow-md hover:border-cyan-300"
+                  className="rounded-2xl bg-white border border-slate-200 overflow-hidden transition-all shadow-sm hover:shadow-md hover:border-sky-300"
                 >
                   <button
                     onClick={() => toggleFAQ(index)}
@@ -69,7 +69,7 @@ export default function FAQ() {
                     <span className="text-base sm:text-lg font-bold text-slate-900">
                       {faq.q}
                     </span>
-                    <div className={`p-2 rounded-full transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#00658D] bg-cyan-50' : 'text-slate-400 bg-slate-100'}`}>
+                    <div className={`p-2 rounded-full transition-transform duration-300 ${isOpen ? 'rotate-180 text-[#00658D] bg-sky-50' : 'text-slate-400 bg-slate-100'}`}>
                       <ChevronDown className="w-5 h-5" />
                     </div>
                   </button>

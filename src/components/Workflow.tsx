@@ -10,7 +10,7 @@ export default function Workflow() {
       title: 'Konsultasi & Pengisian Brief',
       subtitle: 'Riset & Fondasi',
       icon: Search,
-      color: 'from-cyan-500 to-blue-600',
+      color: 'from-[#00658D] to-[#0284C7]',
       description: 'Kami menggali kebutuhan komunikasi visual bisnis Anda, memahami target audiens, dan menganalisis karakter brand sebelum memulai eksplorasi visual.',
       deliverables: ['Brief Proyek & Scope Terstruktur', 'Moodboard & Direksi Gaya Visual', 'Riset Karakter Brand & Kompetitor'],
     },
@@ -19,7 +19,7 @@ export default function Workflow() {
       title: 'Riset & Eksplorasi Konsep',
       subtitle: 'Eksplorasi Konsep',
       icon: Compass,
-      color: 'from-purple-500 to-indigo-600',
+      color: 'from-[#0284C7] to-cyan-500',
       description: 'Menerjemahkan brief ke dalam sketsa kasar dan beberapa alternatif opsi konsep awal baik untuk branding, promosi media sosial, maupun materi cetak.',
       deliverables: ['Sketsa & Draf Layout Awal', '2 Alternatif Konsep Desain', 'Eksplorasi Palet Warna & Tipografi'],
     },
@@ -28,7 +28,7 @@ export default function Workflow() {
       title: 'Feedback & Revisi',
       subtitle: 'Penyempurnaan Detail',
       icon: Repeat,
-      color: 'from-amber-500 to-orange-600',
+      color: 'from-cyan-500 to-amber-500',
       description: 'Kolaborasi interaktif untuk meninjau draf. Kami memoles komposisi tata letak, keselarasan elemen visual, dan detail warna sesuai masukan Anda.',
       deliverables: ['Iterasi & Penyesuaian Detail Visual', 'Sesi Review & Diskusi Interaktif', 'Finalisasi Komposisi & Tata Letak'],
     },
@@ -37,7 +37,7 @@ export default function Workflow() {
       title: 'Serah Terima dan dukungan',
       subtitle: 'Serah Terima Master',
       icon: Rocket,
-      color: 'from-emerald-500 to-teal-600',
+      color: 'from-amber-500 to-yellow-400',
       description: 'Penyerahan seluruh paket file master terorganisir yang siap digunakan untuk kebutuhan promosi digital maupun produksi cetak resolusi tinggi dan dukungan teknis lainnya.',
       deliverables: ['File HD', 'Ekspor Ready-to-Use', 'Panduan Penggunaan Aset Visual'],
     },
@@ -46,13 +46,13 @@ export default function Workflow() {
   return (
     <section id="alur-kerja" className="py-24 bg-slate-50 relative overflow-hidden">
       {/* Glow Line */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-cyan-500/5 blur-[160px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[300px] bg-sky-500/5 blur-[160px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
         {/* Header */}
         <ScrollReveal direction="up" distance={30} className="text-center max-w-3xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cyan-50 border border-cyan-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-[#00658D] text-xs font-semibold uppercase tracking-wider mb-4 shadow-sm">
             <span>Alur Kerja Kami</span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 tracking-tight">
@@ -70,11 +70,11 @@ export default function Workflow() {
             const IconComponent = step.icon;
             return (
               <ScrollStaggerItem key={step.number} direction="up" distance={35} className="h-full">
-                <div className="relative h-full rounded-3xl p-6 glass-card hover:border-cyan-400 flex flex-col justify-between group hover:-translate-y-1 transition-transform duration-200">
+                <div className="relative h-full rounded-3xl p-6 glass-card hover:border-sky-400 flex flex-col justify-between group hover:-translate-y-1 transition-transform duration-200">
                   <div>
                     {/* Step Top Header */}
                     <div className="flex items-center justify-between mb-6">
-                      <span className="text-4xl font-black text-slate-200 group-hover:text-cyan-400 transition-colors font-mono">
+                      <span className="text-4xl font-black text-slate-200 group-hover:text-amber-500 transition-colors font-mono">
                         {step.number}
                       </span>
                       <div className={`w-12 h-12 rounded-2xl bg-gradient-to-tr ${step.color} flex items-center justify-center shadow-lg group-hover:scale-105 transition-transform duration-200`}>

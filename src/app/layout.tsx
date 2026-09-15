@@ -40,7 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" className={`${plusJakartaSans.variable}`}>
-      <body className="bg-white text-slate-900 antialiased selection:bg-[#35A7E0] selection:text-white">
+      <body className="bg-white text-slate-900 antialiased selection:bg-[#0284C7] selection:text-white">
         {children}
       </body>
     </html>
